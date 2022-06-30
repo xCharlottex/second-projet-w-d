@@ -21,7 +21,7 @@ class PageController extends AbstractController {
             'description' => "Décrypter l'actualité politique avec le prisme de David Robert"
         ];
 
-       return $this->render('hello.html.twig', [
+       return $this->render('category.html.twig', [
            'category' => $category
        ]);
     }
