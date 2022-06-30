@@ -7,6 +7,13 @@
     <title>Hellooooooo</title>
 </head>
 <body>
-    <h1>{{ name }}</h1>
+    {% if category.published %}
+    <article style="background-color: {{ category.color }}">
+        <h1>{{ category.title }}</h1>
+        <p>{{ category.description }}</p>
+    </article>
+{% else %}
+    <p> {{ 'nooooooo' }}</p>
+{% endif %}
 </body>
 </html>

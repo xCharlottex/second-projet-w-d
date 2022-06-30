@@ -14,10 +14,15 @@ class PageController extends AbstractController {
      */
     public function hello(){
 
-        $name = 'Cha';
+        $category = [
+            'title' => 'Politique',
+            'color' => 'pink',
+            'published' => true,
+            'description' => "Décrypter l'actualité politique avec le prisme de David Robert"
+        ];
 
        return $this->render('hello.html.twig', [
-           'name' => $name
+           'category' => $category
        ]);
     }
 }
