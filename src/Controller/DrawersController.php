@@ -2,16 +2,21 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class StarsController extends AbstractController {
+class DrawersController extends AbstractController {
+
+//- Créez une nouvelle route (ou remplacez celle de la category) pour afficher une star issue du tableau en fonction de l'id dans l'url
 
     /**
-     * @Route("stars", name="stars")
+     * @Route ("/drawers/{id}", name="list_stars")
      */
-    public function stars() {
-        $categories = [
+
+    public function list_stars($id)
+    {
+        $drawers = [
             1 => [
                 'title' => 'Tex',
                 'color' => 'red',
@@ -36,22 +41,20 @@ class StarsController extends AbstractController {
             4 => [
                 'title' => 'Manuel Valls',
                 'color' => 'blue',
-                'published' => false,
+                'published' => true,
                 'image' => 'https://images.bfmtv.com/vypLwZsN4IyBgQiA4BpWRJgRrpg=/4x3:1252x705/1248x0/images/-80516.jpg',
                 'publishedDate' => new \DateTime('NOW')
             ],
             5 => [
                 'title' => 'JCVD',
                 'color' => 'blue',
-                'published' => false,
+                'published' => true,
                 'image' => 'https://www.programme.tv/imgre/fit/~1~tel~2021~07~12~6801abcb-554d-4a8b-8667-d05cb7f88734.png/1160x500/crop-from/top/quality/80/focus-point/1783,871/jean-claude-van-damme-devoile-les-causes-de-ses-problemes-de-drogue.jpg',
                 'publishedDate' => new \DateTime('NOW')
             ]
         ];
-        return $this->render('categories.html.twig', [
-            'categories' => $categories
+        return $this->render('drawers.html.twig', [
+            'drawer' => $drawers[$id]
         ]);
     }
-
 }
-
