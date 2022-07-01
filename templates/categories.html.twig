@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars Categories</title>
+</head>
+<body>
+    {% for categorie in categories %}
+        {% if categorie.published %}
+        <article style="background-color: {{ categorie.color }}">
+            <h1>{{ categorie.title }}</h1>
+            <img src="{{ categorie.image }}">
+            <p>{{ "now"|date("m/d/Y") }}</p>
+        </article>
+        {% endif %}
+    {% endfor %}
+
+// UNE MACHINE, CA MAAAAARCHE !!!!
+</body>
+</html>
